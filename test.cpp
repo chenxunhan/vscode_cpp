@@ -1,18 +1,28 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <stdio.h>
+#include <string.h>
+int main() {
+    void f2(char *p);
+    int p[10], *q = p, a;
+    printf("string:");
+    for (a = 0; a < 10; a++)
+        scanf("%c", p);
+    printf("\n");
+    q = p;
+    f2(q);
+}
 
-const int MAXNUM = 100;
-FILE *fpin;
-int dp[MAXNUM][MAXNUM];
-
-void init() {
-    fopen("input.txt", "r");
-    for(int i=0,dp_; i<MAXNUM; ++i){
-        for(int j=0; j<MAXNUM; ++j){
-            fscanf(fpin, "%d", &dp_);
-            dp[i][j] = dp_;
+void f2(char *p) {
+    char *q;
+    int i, n, m = 0;
+    n = strlen(p);
+    for (i = 0; i < n; i++) {
+        if (p[i] != 'a') {
+            *q = *(p + i);
+            q++;
+            m++;
+        }
+        for (i = 0; i < m; i++) {
+            printf("%c", *q);
         }
     }
-}
-int main(int argc, char **argv) {
 }
