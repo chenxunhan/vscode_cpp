@@ -38,10 +38,7 @@ void eulerSieve(int end) {
     memset(isprime, 1, sizeof(isprime));//数组无法直接{1}初始化全部1
     for (int i = 2; i <= end; ++i) {//遍历[i~指定的end]
         (isprime[i]) && (prime[prime_number++] = i);//如果没被筛到,就是素数，记录进去
-        for (int j = 0; j < prime_number; ++j) {//遍历所有的prime
-            if (i * prime[j] > end) {//如果他妈越界了
-                break;
-            }
+        for (int j = 0; j < prime_number&&i * prime[j]<=end; ++j) {//遍历所有的prime 且 在end筛选范围内
             isprime[i * prime[j]] = 0;//i是在第一层for++的，因此是从地向上,对以每一个放在prime里的素数自始至终都是从底向上筛掉他的所有倍数的
 
             /*欧拉筛的难点就在于对if (i % prime[j] == 0)这步的理解，当i是prime[j]的整数倍时，
