@@ -19,30 +19,25 @@ void eulerSieve(int end) {
 }
 
 bool isHuiWen(int num) {
-    static int c[15], n;
-    n = 0;
+    int originalNum = num, reverseNum(0);
     while (num) {
-        c[n++] = num % 10;
+        reverseNum *= 10;
+        reverseNum += num % 10;
         num /= 10;
     }
-    for (int i(0); i <= n / 2; ++i) {
-        if (c[i] != c[n - i - 1]) {
-            return 0;
-        }
-    }
-    return 1;
+    return (originalNum == reverseNum);
 }
 
 int main() {
-    int a(5), b(500), i(0);
-    // cin >> a>>b;
+    int a(5), b(1e8), i(0);
+    cin >> a >> b;
     eulerSieve(b);
     for (; prime[i] < a && prime[i]; ++i) {}
     for (; prime[i] <= b && prime[i]; ++i) {
         if (isHuiWen(prime[i])) {
-            cout << prime[i] << endl;
+            // cout << prime[i] << endl;
+            printf("%d\n", prime[i]);
         }
     }
-
     return 0;
 }

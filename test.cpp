@@ -2,12 +2,9 @@
 using namespace std;
 
 int main() {
-    int n, res(0);
-    cin >> n;
-    for (int i(0); i <= n; ++i) {
-        res += i;
-    }
-    cout << res;
-
+    struct date {
+        int year, month, day;
+    } today;
+    printf("%d  %d", sizeof(struct date), sizeof(today));
     return 0;
 }
