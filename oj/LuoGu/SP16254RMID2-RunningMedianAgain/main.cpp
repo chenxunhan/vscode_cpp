@@ -4,7 +4,7 @@ using namespace std;
 const int MAXSIZE = 1e5 + 5;
 
 //大根堆
-class GreaterHeap {
+class Hgt {
   private:
   public:
     int ele[MAXSIZE] = {0};
@@ -45,7 +45,7 @@ class GreaterHeap {
 };
 
 //小根堆
-class LessHeap {
+class Hls {
   private:
   public:
     int ele[MAXSIZE] = {0};
@@ -88,8 +88,8 @@ class LessHeap {
 class {
   private:
   public:
-    LessHeap lessHeap;
-    GreaterHeap greaterHeap;
+    Hls lessHeap;
+    Hgt greaterHeap;
     int medianIdx() {
         return (lessHeap.eleNum + greaterHeap.eleNum + 1) / 2;
     }

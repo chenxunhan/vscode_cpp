@@ -68,7 +68,6 @@ int main() {
     for (int i = 1; i <= nodeNum; ++i) {
         cout << dis[i] << " ";
     }
-
     return 0;
 }
 

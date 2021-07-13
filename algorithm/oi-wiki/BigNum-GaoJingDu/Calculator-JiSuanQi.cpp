@@ -63,7 +63,7 @@ void sub(const int a[], const int b[], int c[]) {
 
 void mul_shorts(const int a[], const int b, int c[]) {
     clear(c);
-    for (int i(0); i < LEN - 1; ++i) {
+    for (int i(0); i < LEN - 1; ++i) {//i in c/a
         c[i] += a[i] * b;
         if (c[i] >= 10) {
             c[i + 1] += c[i] / 10;
@@ -74,9 +74,9 @@ void mul_shorts(const int a[], const int b, int c[]) {
 
 void mul(int a[], int b[], int c[]) {
     clear(c);
-    for (int i = 0; i < LEN - 1; ++i) {
-        for (int j = 0; j <= i; ++j) {
-            c[i] += a[j] * b[i - j];
+    for (int i = 0; i < LEN - 1; ++i) {//i in c
+        for (int j = 0; j <= i; ++j) {//i in a
+            c[i] += a[j] * b[i - j]; //i-j in b
         }
         if (c[i] >= 10) {
             c[i + 1] += c[i] / 10;

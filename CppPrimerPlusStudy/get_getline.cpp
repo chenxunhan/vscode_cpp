@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-char name1[50]="ä½ då¥½";
+char name1[50]="ä½ då¥?";
 char name2[50];
 char name3[50];
 int year;
@@ -17,5 +17,13 @@ int main(){
 	)cxh"<<name1<<endl
 	<<"name2:"<<name2<<endl
 	<<"name3:"<<name3<<endl;
+
+	
+	const int a=2;//&a ÀàÐÍÊÇconst int*
+	int b=2,c;//&a ÀàÐÍÊÇint*
+	const int* p=&a; //*p²»¿É±ä, Èô³õÊ¼»¯±äÁ¿±¨´í
+	int const *p1=&a;//ditto
+	int* const p2=&b;//p2²»¿É±äÖ»ÄÜÊÇ&b, ÇÒbÊÇ±äÁ¿
+	p2=&c;//±¨´í
     return 0;
 }
